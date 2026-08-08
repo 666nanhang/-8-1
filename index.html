@@ -686,6 +686,1089 @@
         body.modal-open { overflow: hidden; }
 
     </style>
+    <style>
+        /*
+         * Warm portfolio visual layer.
+         * This intentionally overrides the original cyber style without changing
+         * rendering, modal, lightbox, print, or Supabase behavior.
+         */
+        :root {
+            --primary: #315a72;
+            --primary-soft: rgba(49, 90, 114, 0.1);
+            --accent: #b96445;
+            --accent-soft: rgba(185, 100, 69, 0.12);
+            --bg: #f5f0e8;
+            --surface: rgba(255, 253, 249, 0.86);
+            --text: #4a3930;
+            --text-light: #8f7d70;
+            --border: #e4d9ce;
+            --card-bg: #fffdfa;
+            --shadow: 0 14px 38px rgba(77, 54, 41, 0.08);
+            --shadow-hover: 0 16px 42px rgba(77, 54, 41, 0.14);
+            font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
+        }
+
+        .container {
+            max-width: 1040px;
+            padding: 0 28px;
+        }
+
+        .navbar {
+            background: rgba(245, 240, 232, 0.94);
+            border-bottom: 1px solid var(--border);
+            box-shadow: none;
+            padding: 18px 0;
+        }
+
+        .nav-container {
+            min-height: 38px;
+        }
+
+        .nav-logo {
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.32em;
+        }
+
+        .nav-logo span {
+            color: var(--accent);
+        }
+
+        .nav-center {
+            gap: 18px;
+        }
+
+        .nav-center a {
+            color: #77665a;
+            font-size: 0.98rem;
+            padding: 5px 8px;
+            border-radius: 0;
+        }
+
+        .nav-center a:hover {
+            color: var(--accent);
+            background: transparent;
+        }
+
+        .icon-btn {
+            width: 34px;
+            height: 34px;
+            color: #77665a;
+            border-color: transparent;
+            border-radius: 50%;
+        }
+
+        .icon-btn:hover {
+            color: var(--accent);
+            background: #eee3d7;
+            border-color: transparent;
+        }
+
+        .main-content {
+            margin-top: 88px;
+        }
+
+        .hero-section {
+            position: relative;
+            min-height: 690px;
+            padding: clamp(100px, 13vh, 150px) 28px 64px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-top-layout {
+            display: block;
+            text-align: center;
+        }
+
+        .hero-left-content {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .hero-tag {
+            color: #aa9586;
+            font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.28em;
+            margin-bottom: 30px;
+        }
+
+        .hero-main-row {
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        .hero-name {
+            color: var(--text);
+            font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+            font-size: clamp(4rem, 8.6vw, 6.8rem);
+            font-weight: 500;
+            letter-spacing: 0;
+        }
+
+        .hero-dot {
+            color: var(--accent);
+        }
+
+        .hero-avatar {
+            width: 76px;
+            height: 76px;
+            object-fit: cover;
+            border: 4px solid #fffdfa;
+            box-shadow: 0 0 0 1px #d7c7b8, 0 10px 20px rgba(77, 54, 41, 0.1);
+        }
+
+        .hero-avatar:hover {
+            transform: scale(1.03);
+        }
+
+        .hero-slogan {
+            color: #806f63;
+            font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+            font-size: clamp(1.45rem, 2.8vw, 2.2rem);
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 0;
+        }
+
+        .hero-desc-row {
+            display: block;
+            margin-bottom: 42px;
+        }
+
+        .hero-desc-row .hero-desc,
+        .hero-desc {
+            min-width: 0;
+            max-width: 620px;
+            margin: 0 auto 30px;
+            color: #8f7d70;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .hero-desc b {
+            color: #655144;
+        }
+
+        .hero-discuss-wrap {
+            padding: 0;
+        }
+
+        .hero-discuss-wrap::before {
+            display: none;
+        }
+
+        .discuss-btn {
+            background: transparent;
+            border: 1px solid #cdb9a8;
+            border-radius: 999px;
+            clip-path: none;
+            color: #5f4c40;
+            font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            padding: 13px 42px;
+        }
+
+        .discuss-btn:hover {
+            background: #efe3d8;
+            border-color: #b96445;
+            color: #8c4b34;
+            transform: translateY(-2px);
+        }
+
+        .hero-contact-card {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 20px 0;
+            background: transparent;
+            border: 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            border-radius: 0;
+            box-shadow: none;
+            gap: 0;
+        }
+
+        .contact-item {
+            min-width: 0;
+            gap: 4px;
+            padding: 0 20px;
+        }
+
+        .contact-item + .contact-item {
+            border-left: 1px solid var(--border);
+        }
+
+        .contact-label {
+            color: #aa9586;
+            font-size: 0.74rem;
+            font-weight: 500;
+        }
+
+        .contact-val {
+            color: #5f4c40;
+            font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0;
+            overflow-wrap: anywhere;
+        }
+
+        .section-title {
+            color: var(--text);
+            font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 500;
+            gap: 12px;
+            margin: 84px 0 34px;
+        }
+
+        .section-title::before {
+            width: 30px;
+            height: 1px;
+            background: var(--accent);
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .sticky-wrapper {
+            height: 240vh;
+            background: #ede5da;
+            margin-top: 44px;
+        }
+
+        .sticky-container {
+            max-width: 1040px;
+            padding: 0 28px;
+        }
+
+        .sticky-container .section-title {
+            margin-top: 0;
+            padding-top: 30px;
+        }
+
+        .role-cards-track {
+            gap: 24px;
+        }
+
+        .role-card {
+            flex-basis: clamp(300px, 43%, 410px);
+            aspect-ratio: 4 / 4.8;
+            border: 1px solid #d8c8b8;
+            border-radius: 3px;
+            box-shadow: none;
+        }
+
+        .role-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 16px 30px rgba(77, 54, 41, 0.12);
+            transform: translateY(-6px);
+        }
+
+        .tech-bg-1,
+        .tech-bg-2,
+        .tech-bg-3 {
+            background: #fffaf3;
+        }
+
+        .tech-bg-2 {
+            background: #f4ede4;
+        }
+
+        .tech-bg-3 {
+            background: #eee7dc;
+        }
+
+        .tech-grid,
+        .tech-beam,
+        .tech-shape,
+        .tech-data {
+            display: none;
+        }
+
+        .role-card-overlay,
+        .role-card:hover .role-card-overlay {
+            background: transparent;
+        }
+
+        .role-card-content {
+            color: var(--text);
+            padding: 28px;
+            background:
+                linear-gradient(90deg, transparent 0, transparent 22px, rgba(185, 100, 69, 0.15) 22px, rgba(185, 100, 69, 0.15) 23px, transparent 23px);
+        }
+
+        .role-card-top {
+            color: #9b7663;
+            font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-shadow: none;
+        }
+
+        .role-card-title {
+            color: #4a3930;
+            font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+            font-size: 2.35rem;
+            font-weight: 500;
+            text-shadow: none;
+        }
+
+        .role-card-bottom {
+            color: #806f63;
+            font-size: 0.9rem;
+        }
+
+        .role-card:hover .role-card-bottom {
+            color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .exp-list {
+            gap: 28px;
+        }
+
+        .exp-card-new {
+            min-height: 0;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            box-shadow: none;
+            background: var(--card-bg);
+        }
+
+        .exp-card-new:hover {
+            border-color: #c89b84;
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .exp-card-img-wrap {
+            position: relative;
+            height: clamp(240px, 42vw, 420px);
+        }
+
+        .exp-card-img-wrap img {
+            object-position: center;
+        }
+
+        .exp-card-new:hover .exp-card-img-wrap img {
+            transform: scale(1.02);
+        }
+
+        .exp-card-overlay,
+        .exp-card-new:hover .exp-card-overlay {
+            background: transparent;
+        }
+
+        .exp-card-content {
+            position: relative;
+            margin-top: 0;
+            padding: 28px 76px 30px 32px;
+            background: #fffdfa;
+        }
+
+        .exp-card-title,
+        .card h3,
+        .card h2 {
+            color: var(--text) !important;
+            font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+            font-weight: 500;
+            letter-spacing: 0;
+        }
+
+        .exp-card-meta {
+            color: #a18c7e;
+            font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+            font-size: 0.82rem;
+        }
+
+        .exp-card-tag {
+            background: #f4ece3;
+            border-color: #e1d2c4;
+            border-radius: 999px;
+            color: #7c6557;
+            padding: 4px 12px;
+        }
+
+        .exp-card-new:hover .exp-card-tag {
+            background: #f6e7dd;
+            border-color: #d49a7d;
+            color: #9b573e;
+        }
+
+        .exp-card-desc {
+            color: #77665a;
+            font-size: 1rem;
+        }
+
+        .exp-card-arrow {
+            color: var(--accent);
+        }
+
+        .grid-2,
+        .grid-3 {
+            gap: 18px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            box-shadow: none;
+            padding: 28px;
+        }
+
+        .card:hover {
+            border-color: #c89b84;
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+
+        .card p {
+            color: #77665a !important;
+        }
+
+        .card p[style*="var(--primary)"] {
+            color: #9b573e !important;
+        }
+
+        .skill-name {
+            color: #5f4c40;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #e9ded2;
+            border-radius: 0;
+        }
+
+        .progress-fill {
+            background: #71856d;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .cert-img-wrap {
+            height: 218px;
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            box-shadow: none;
+        }
+
+        .cert-img-wrap:hover {
+            border-color: #c89b84;
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
+
+        #back-to-top {
+            width: 42px;
+            height: 42px;
+            bottom: 24px;
+            right: 24px;
+            background: #fffdfa;
+            border-color: #d7c6b7;
+            border-radius: 50%;
+            color: #8c604b;
+            box-shadow: 0 6px 18px rgba(77, 54, 41, 0.1);
+        }
+
+        #back-to-top:hover {
+            background: #b96445;
+            color: #fffdfa;
+            border-color: #b96445;
+            box-shadow: 0 8px 22px rgba(185, 100, 69, 0.25);
+        }
+
+        .footer {
+            border-top-color: var(--border);
+            color: #9d887a;
+        }
+
+        .modal-overlay {
+            background: rgba(59, 44, 35, 0.42);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-container {
+            max-width: 980px;
+            padding: 42px 26px;
+            background: #f8f3ec;
+            border: 1px solid #e4d9ce;
+            box-shadow: 0 24px 70px rgba(59, 44, 35, 0.2);
+        }
+
+        .modal-close {
+            color: #6c5547;
+        }
+
+        .modal-close:hover {
+            color: var(--accent);
+        }
+
+        .ai-modal-title {
+            color: var(--text);
+            font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+            font-weight: 500;
+            letter-spacing: 0;
+        }
+
+        .ai-solid {
+            color: var(--text);
+        }
+
+        .ai-outline {
+            color: transparent;
+            -webkit-text-stroke: 1px #b96445;
+            text-stroke: 1px #b96445;
+        }
+
+        .ai-modal-subtitle {
+            color: #9e8879;
+            font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+            font-size: 0.85rem;
+            letter-spacing: 0.16em;
+        }
+
+        .modal-img {
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            box-shadow: 0 10px 24px rgba(77, 54, 41, 0.1);
+        }
+
+        .discuss-container {
+            max-width: 760px;
+            gap: 28px;
+        }
+
+        .discuss-q {
+            color: #77665a;
+            font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .discuss-q::before {
+            color: var(--accent);
+            content: "· ";
+        }
+
+        .terminal-window {
+            background: #fffdfa;
+            border-color: #ddcfc1;
+            border-radius: 2px;
+            box-shadow: none;
+        }
+
+        .terminal-window:focus-within {
+            border-color: #b96445;
+            box-shadow: 0 0 0 3px rgba(185, 100, 69, 0.1);
+            transform: none;
+        }
+
+        .terminal-window::after {
+            display: none;
+        }
+
+        .terminal-header {
+            background: #f0e7dd;
+            border-bottom-color: #e3d7ca;
+        }
+
+        .term-title {
+            color: #9a8373;
+        }
+
+        .terminal-body {
+            background: transparent;
+            padding: 18px;
+        }
+
+        .term-prompt {
+            color: #71856d;
+        }
+
+        .discuss-input {
+            color: #5f4c40;
+            font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+        }
+
+        .discuss-input:focus {
+            color: #4a3930;
+        }
+
+        .discuss-submit {
+            background: #b96445;
+            border-radius: 999px;
+            color: #fffdfa;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            padding: 12px 28px;
+        }
+
+        .discuss-submit:hover {
+            background: #9f5036;
+            box-shadow: 0 8px 18px rgba(185, 100, 69, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .feedback-board {
+            border-top-color: #ddcfc1;
+            margin-top: 44px;
+            padding-top: 30px;
+        }
+
+        .feedback-board-title {
+            color: #6d7f68;
+            font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+            font-size: 1.6rem;
+            text-shadow: none;
+        }
+
+        .feedback-board-title::before {
+            content: "—";
+            animation: none;
+        }
+
+        .feedback-card {
+            background: #fffdfa;
+            border-color: #e4d9ce;
+            border-left: 2px solid #b96445;
+            border-radius: 2px;
+            box-shadow: none;
+        }
+
+        .feedback-card:hover {
+            background: #fffaf4;
+            border-color: #d4b09d;
+            transform: translateX(3px);
+        }
+
+        .feedback-time {
+            color: #9b8778;
+            border-bottom-color: #eee4da;
+        }
+
+        .feedback-ans-q {
+            color: #71856d;
+        }
+
+        .feedback-ans-a {
+            color: #5f4c40;
+        }
+
+        /* Public comment form: the fields carry the hierarchy. */
+        .comment-modal {
+            max-width: 760px;
+            text-align: left;
+        }
+
+        .comment-modal-title {
+            color: var(--text);
+            font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+            font-size: clamp(2.3rem, 7vw, 4.4rem);
+            font-weight: 500;
+            line-height: 1;
+            margin: 8px 0 56px;
+        }
+
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 70px;
+        }
+
+        .comment-field {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .comment-field-label {
+            color: #968e87;
+            font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+        }
+
+        .comment-field-label span {
+            color: var(--accent);
+        }
+
+        .comment-field input,
+        .comment-field textarea {
+            width: 100%;
+            box-sizing: border-box;
+            appearance: none;
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid #d8d1ca;
+            border-radius: 0;
+            color: var(--text);
+            font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+            font-size: clamp(1.15rem, 2vw, 1.45rem);
+            line-height: 1.7;
+            outline: none;
+            padding: 0 0 16px;
+            resize: vertical;
+            transition: border-color 180ms ease, box-shadow 180ms ease;
+        }
+
+        .comment-field input {
+            min-height: 52px;
+        }
+
+        .comment-field textarea {
+            min-height: 160px;
+        }
+
+        .comment-field input::placeholder,
+        .comment-field textarea::placeholder {
+            color: #b4afb0;
+            opacity: 1;
+        }
+
+        .comment-field input:focus,
+        .comment-field textarea:focus {
+            border-bottom-color: var(--accent);
+            box-shadow: 0 2px 0 -1px var(--accent);
+        }
+
+        .comment-privacy-note {
+            color: #8b7b70;
+            font-size: 0.86rem;
+            line-height: 1.7;
+            margin: -40px 0 0;
+        }
+
+        .comment-submit-row {
+            align-items: center;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -28px;
+        }
+
+        .comment-submit {
+            background: var(--accent);
+            border: 1px solid var(--accent);
+            border-radius: 0;
+            color: #fffdfa;
+            cursor: pointer;
+            font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            padding: 13px 28px;
+            transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+        }
+
+        .comment-submit:hover:not(:disabled) {
+            background: #9f5036;
+            border-color: #9f5036;
+            transform: translateY(-2px);
+        }
+
+        .comment-submit:disabled {
+            cursor: wait;
+            opacity: 0.62;
+        }
+
+        .comment-feed {
+            border-top: 1px solid #d8d1ca;
+            margin-top: 72px;
+            padding-top: 28px;
+        }
+
+        .comment-feed-title {
+            color: #77665a;
+            font-family: "Noto Serif SC", "Songti SC", STSong, serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            margin: 0 0 24px;
+        }
+
+        .comment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .comment-card {
+            border-bottom: 1px solid #e3ddd6;
+            padding: 25px 0 28px;
+        }
+
+        .comment-card:first-child {
+            border-top: 1px solid #e3ddd6;
+        }
+
+        .comment-meta {
+            align-items: baseline;
+            color: #8d8279;
+            display: flex;
+            flex-wrap: wrap;
+            font-family: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+            font-size: 0.78rem;
+            gap: 10px 16px;
+            letter-spacing: 0.06em;
+            margin-bottom: 13px;
+        }
+
+        .comment-name {
+            color: #6d7f68;
+            font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+            font-size: 0.98rem;
+            font-weight: 600;
+            letter-spacing: 0;
+        }
+
+        .comment-content {
+            color: #5f4c40;
+            font-size: 1rem;
+            line-height: 1.85;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        .comment-list-message {
+            color: #9b8778;
+            font-size: 0.93rem;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .lightbox-overlay {
+            background: rgba(40, 30, 24, 0.9);
+        }
+
+        .lightbox-img {
+            border-radius: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .container,
+            .sticky-container {
+                padding: 0 20px;
+            }
+
+            .navbar {
+                padding: 12px 0;
+            }
+
+            .nav-center {
+                gap: 2px 8px;
+            }
+
+            .nav-center a {
+                font-size: 0.8rem;
+                padding: 3px 4px;
+            }
+
+            .main-content {
+                margin-top: 68px;
+            }
+
+            .hero-section {
+                min-height: 620px;
+                padding: 88px 20px 46px;
+            }
+
+            .hero-main-row {
+                flex-direction: column-reverse;
+                gap: 18px;
+            }
+
+            .hero-name {
+                font-size: clamp(3.4rem, 19vw, 5.2rem);
+            }
+
+            .hero-avatar {
+                width: 72px;
+                height: 72px;
+            }
+
+            .hero-desc-row .hero-desc {
+                text-align: center;
+            }
+
+            .hero-contact-card {
+                align-items: stretch;
+                gap: 12px;
+                padding: 16px 0;
+            }
+
+            .contact-item {
+                padding: 0;
+                text-align: center;
+            }
+
+            .contact-item + .contact-item {
+                border-left: 0;
+                border-top: 1px solid var(--border);
+                padding-top: 12px;
+            }
+
+            .sticky-wrapper {
+                height: auto;
+                padding: 62px 0;
+            }
+
+            .sticky-content {
+                height: auto;
+                overflow: visible;
+            }
+
+            .role-cards-container {
+                overflow: visible;
+            }
+
+            .role-cards-track {
+                flex-direction: column;
+                transform: none !important;
+            }
+
+            .role-card {
+                flex: none;
+                width: 100%;
+                max-width: none;
+                aspect-ratio: 1.25 / 1;
+            }
+
+            .section-title {
+                margin-top: 64px;
+            }
+
+            .sticky-container .section-title {
+                margin-top: 0;
+            }
+
+            .exp-card-content {
+                padding: 24px 56px 26px 24px;
+            }
+
+            .modal-container {
+                width: 94%;
+                max-height: 88vh;
+                padding: 38px 18px 28px;
+            }
+
+            .modal-close {
+                top: 10px;
+                right: 12px;
+            }
+
+            .comment-modal-title {
+                font-size: 2.3rem;
+                margin-bottom: 42px;
+            }
+
+            .comment-form {
+                gap: 54px;
+            }
+
+            .comment-field {
+                gap: 20px;
+            }
+
+            .comment-field textarea {
+                min-height: 128px;
+            }
+
+            .comment-privacy-note {
+                margin-top: -30px;
+            }
+
+            .comment-feed {
+                margin-top: 54px;
+            }
+        }
+
+        .reveal-section,
+        .reveal-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition:
+                opacity 760ms ease,
+                transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+            transition-delay: var(--reveal-delay, 0ms);
+            will-change: opacity, transform;
+        }
+
+        .reveal-section.is-visible,
+        .reveal-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-section .section-title {
+            transition: opacity 620ms ease, transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-section:not(.is-visible) .section-title {
+            opacity: 0;
+            transform: translateY(18px);
+        }
+
+        .reveal-section.is-visible .section-title {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-section,
+            .reveal-item,
+            .reveal-section .section-title {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                color: #2e2824;
+            }
+
+            .navbar,
+            #back-to-top,
+            .hero-discuss-wrap,
+            .modal-overlay,
+            .lightbox-overlay {
+                display: none !important;
+            }
+
+            .main-content {
+                margin-top: 0;
+            }
+
+            .sticky-wrapper {
+                height: auto;
+                background: transparent;
+            }
+
+            .sticky-content {
+                height: auto;
+            }
+
+            .role-cards-track {
+                transform: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="root"></div>
@@ -709,7 +1792,7 @@
                     languages: [{ name: "中文", level: 100 }, { name: "英文 (读写)", level: 70 }],
                     frameworks: [{ name: "Coze智能体", level: 85 }, { name: "Trae", level: 75 }, { name: "AI提示词", level: 90 }],
                     tools: [{ name: "剪映", level: 90 }, { name: "Word", level: 85 }, { name: "Excel", level: 80 }, { name: "PowerPoint", level: 85 }],
-                    domains: [{ name: "食品工程", level: 75 }, { name: "数据分析", level: 70 }, { name: "内容运营", level: 85 }]
+                    domains: [{ name: "回路接线", level: 75 }, { name: "数据分析", level: 70 }, { name: "内容运营", level: 85 }]
                 }
             };
 
@@ -765,7 +1848,7 @@
                 const slogan = el('h2', 'hero-slogan', '向阳而生，步履不停。');
                 
                 const descRow = el('div', 'hero-desc-row', '');
-                const desc = el('p', 'hero-desc', '河南牧业经济学院的<b>大一新生</b>，醉心<b>AI赋能</b>创作，执着光影视觉美学；探寻代码与艺术的共生巅峰。');
+                const desc = el('p', 'hero-desc', '河南牧业经济学院的<b>大二学生</b>，醉心<b>AI赋能</b>创作，执着光影视觉美学；探寻代码与艺术的共生巅峰。');
                 const discussWrap = el('div', 'hero-discuss-wrap', `
                     <a href="javascript:void(0);" class="discuss-btn" onclick="openModal('discussModal')">讨论区</a>
                 `);
@@ -1039,73 +2122,39 @@
                 mediaModal.onclick = () => closeModal('mediaModal');
                 fragment.appendChild(mediaModal);
 
-                // 4. 讨论区专属弹窗 (代码终端UI)
                 const discussModal = el('div', 'modal-overlay', '');
                 discussModal.id = 'discussModal';
                 discussModal.innerHTML = `
                     <button class="modal-close" onclick="closeModal('discussModal')">
                         <svg viewBox="0 0 24 24" width="40" height="40" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                     </button>
-                    <div class="modal-container" onclick="event.stopPropagation()">
-                        <h1 class="ai-modal-title" style="margin-bottom: 24px;">
-                            <span class="ai-outline" style="font-size: 1.2em;">讨论区</span>
-                        </h1>
-                        <p class="ai-modal-subtitle" style="margin-bottom: 50px;">+ DISCUSSION AREA +</p>
-                        
-                        <!-- 讨论区问答终端表单 -->
-                        <div class="discuss-container">
-                            <div class="discuss-item">
-                                <div class="discuss-q">Q1. 您认为这个网页还有哪些可以优化的？</div>
-                                <div class="terminal-window">
-                                    <div class="terminal-header">
-                                        <div class="term-title">sh - feedback.sh</div>
-                                    </div>
-                                    <div class="terminal-body">
-                                        <div class="term-prompt">guest@zsh:~$</div>
-                                        <textarea id="discuss-q1" class="discuss-input" placeholder="输入反馈内容..."></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="discuss-item">
-                                <div class="discuss-q">Q2. 您认为什么才算是一个好的项目？</div>
-                                <div class="terminal-window">
-                                    <div class="terminal-header">
-                                        <div class="term-title">sh - views.sh</div>
-                                    </div>
-                                    <div class="terminal-body">
-                                        <div class="term-prompt">guest@zsh:~$</div>
-                                        <textarea id="discuss-q2" class="discuss-input" placeholder="分享您的见解..."></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="discuss-item">
-                                <div class="discuss-q">Q3. 您认为AI编程给人们带来的影响？</div>
-                                <div class="terminal-window">
-                                    <div class="terminal-header">
-                                        <div class="term-title">sh - ai_impact.sh</div>
-                                    </div>
-                                    <div class="terminal-body">
-                                        <div class="term-prompt">guest@zsh:~$</div>
-                                        <textarea id="discuss-q3" class="discuss-input" placeholder="畅所欲言..."></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="discuss-submit-wrap">
-                                <button id="discuss-submit-btn" class="discuss-submit" onclick="submitDiscussion()">提交反馈</button>
+                    <div class="modal-container comment-modal" onclick="event.stopPropagation()">
+                        <h1 class="comment-modal-title">评论区</h1>
+
+                        <div class="comment-form">
+                            <label class="comment-field" for="comment-display-name">
+                                <span class="comment-field-label"><span>01</span> / 身份标识</span>
+                                <input id="comment-display-name" type="text" maxlength="40" autocomplete="nickname" placeholder="你的称呼" required>
+                            </label>
+
+                            <label class="comment-field" for="comment-content">
+                                <span class="comment-field-label"><span>02</span> / 消息内容</span>
+                                <textarea id="comment-content" maxlength="1000" placeholder="说点什么..." required></textarea>
+                            </label>
+
+                            <p class="comment-privacy-note">仅填写愿意公开展示的信息，请勿提交联系方式、住址等敏感内容。</p>
+
+                            <div class="comment-submit-row">
+                                <button id="discuss-submit-btn" class="comment-submit" onclick="submitDiscussion()">发布评论</button>
                             </div>
                         </div>
 
-                        <!-- 讨论区历史记录看板 DOM 结构 -->
-                        <div class="discuss-container feedback-board">
-                            <h2 class="feedback-board-title">最新讨论记录 / LOGS</h2>
-                            <div id="feedback-list" class="feedback-list">
-                                <div style="color:#8b9bb4; text-align:center; font-family: monospace;">Loading data from Supabase...</div>
+                        <section class="comment-feed" aria-labelledby="comment-feed-title">
+                            <h2 id="comment-feed-title" class="comment-feed-title">最新评论</h2>
+                            <div id="feedback-list" class="comment-list">
+                                <div class="comment-list-message">正在加载评论...</div>
                             </div>
-                        </div>
-
+                        </section>
                     </div>
                 `;
                 discussModal.onclick = () => closeModal('discussModal');
@@ -1158,22 +2207,21 @@
                 }[tag] || tag));
             }
 
-            // 拉取讨论区数据
             window.fetchFeedback = async function() {
                 const listEl = document.getElementById('feedback-list');
                 if(!listEl) return;
                 
                 try {
                     const { data, error } = await supabase
-                        .from('feedback')
-                        .select('*')
+                        .from('portfolio_comments')
+                        .select('display_name, content, created_at')
                         .order('created_at', { ascending: false })
                         .limit(15);
 
                     if (error) throw error;
 
                     if (data.length === 0) {
-                        listEl.innerHTML = '<div style="color:#8b9bb4; text-align:center; font-family: monospace;">// 暂无讨论记录，快来抢沙发吧！</div>';
+                        listEl.innerHTML = '<div class="comment-list-message">还没有评论，留下第一条吧。</div>';
                         return;
                     }
 
@@ -1182,69 +2230,55 @@
                         const dateStr = dateObj.getFullYear() + '/' + (dateObj.getMonth()+1).toString().padStart(2, '0') + '/' + dateObj.getDate().toString().padStart(2, '0') + ' ' + dateObj.getHours().toString().padStart(2, '0') + ':' + dateObj.getMinutes().toString().padStart(2, '0');
                         
                         return `
-                            <div class="feedback-card">
-                                <div class="feedback-time">[SYS_TIME]: ${dateStr}</div>
-                                ${item.optimization_suggestions ? `
-                                    <div class="feedback-ans">
-                                        <div class="feedback-ans-q"># Q1. 网页优化建议</div>
-                                        <div class="feedback-ans-a">${escapeHTML(item.optimization_suggestions)}</div>
-                                    </div>
-                                ` : ''}
-                                ${item.good_project_views ? `
-                                    <div class="feedback-ans">
-                                        <div class="feedback-ans-q"># Q2. 什么是好项目</div>
-                                        <div class="feedback-ans-a">${escapeHTML(item.good_project_views)}</div>
-                                    </div>
-                                ` : ''}
-                                ${item.ai_impact_views ? `
-                                    <div class="feedback-ans">
-                                        <div class="feedback-ans-q"># Q3. AI编程的影响</div>
-                                        <div class="feedback-ans-a">${escapeHTML(item.ai_impact_views)}</div>
-                                    </div>
-                                ` : ''}
-                            </div>
+                            <article class="comment-card">
+                                <div class="comment-meta">
+                                    <span class="comment-name">${escapeHTML(item.display_name)}</span>
+                                    <time datetime="${escapeHTML(item.created_at)}">${dateStr}</time>
+                                </div>
+                                <p class="comment-content">${escapeHTML(item.content)}</p>
+                            </article>
                         `;
                     }).join('');
                 } catch (error) {
-                    console.error('拉取记录失败:', error);
-                    listEl.innerHTML = '<div style="color:#ff5f56; text-align:center; font-family: monospace;">[ERROR] 拉取讨论记录失败，请检查数据库 Select 权限。</div>';
+                    console.error('加载评论失败:', error);
+                    listEl.innerHTML = '<div class="comment-list-message">暂时无法加载评论，请稍后再试。</div>';
                 }
             };
 
             window.submitDiscussion = async function() {
-                const q1 = document.getElementById('discuss-q1').value;
-                const q2 = document.getElementById('discuss-q2').value;
-                const q3 = document.getElementById('discuss-q3').value;
+                const nameInput = document.getElementById('comment-display-name');
+                const contentInput = document.getElementById('comment-content');
+                const displayName = nameInput.value.trim();
+                const content = contentInput.value.trim();
 
-                if (!q1.trim() && !q2.trim() && !q3.trim()) {
-                    alert('请至少填写一项反馈内容哦！');
+                if (!displayName || !content) {
+                    alert('请填写称呼和评论内容。');
                     return;
                 }
 
                 const btn = document.getElementById('discuss-submit-btn');
                 const originalText = btn.innerText;
-                btn.innerText = '提交中...';
+                btn.innerText = '发布中...';
                 btn.disabled = true;
 
                 try {
                     const { error } = await supabase
-                        .from('feedback')
+                        .from('portfolio_comments')
                         .insert([
-                            { optimization_suggestions: q1, good_project_views: q2, ai_impact_views: q3 }
+                            { display_name: displayName, content }
                         ]);
 
                     if (error) throw error;
 
-                    alert('感谢您的反馈！提交成功！');
+                    alert('评论已发布。');
                     
-                    document.getElementById('discuss-q1').value = '';
-                    document.getElementById('discuss-q2').value = '';
-                    document.getElementById('discuss-q3').value = '';
+                    nameInput.value = '';
+                    contentInput.value = '';
                     fetchFeedback(); 
                     
                 } catch (error) {
-                    console.error('提交失败:', error);
-                    alert('提交失败，请检查网络或相关配置。错误信息: ' + error.message);
+                    console.error('发布评论失败:', error);
+                    alert('发布失败，请稍后再试。');
                 } finally {
                     btn.innerText = originalText;
                     btn.disabled = false;
@@ -1314,7 +2348,60 @@
                 requestAnimationFrame(renderLoop);
             };
 
-            setTimeout(initAdvancedAnimations, 150);
+            function initScrollReveal() {
+                const sections = Array.from(document.querySelectorAll('.main-content > section'));
+                const items = Array.from(document.querySelectorAll(
+                    '.hero-contact-card, .role-card, .exp-card-new, #projects .card, #skills .card, .cert-img-wrap'
+                ));
+
+                document.body.classList.add('reveal-ready');
+
+                sections.forEach((section, index) => {
+                    section.classList.add('reveal-section');
+                    section.style.setProperty('--reveal-delay', `${Math.min(index * 70, 280)}ms`);
+                });
+
+                items.forEach((item, index) => {
+                    item.classList.add('reveal-item');
+                    item.style.setProperty('--reveal-delay', `${Math.min((index % 4) * 90, 270)}ms`);
+                });
+
+                const reveal = (entry, observer) => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                };
+
+                if (!('IntersectionObserver' in window)) {
+                    sections.concat(items).forEach(node => node.classList.add('is-visible'));
+                    return;
+                }
+
+                const sectionObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => reveal(entry, observer));
+                }, {
+                    threshold: 0.16,
+                    rootMargin: '0px 0px -8% 0px'
+                });
+
+                const itemObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => reveal(entry, observer));
+                }, {
+                    threshold: 0.12,
+                    rootMargin: '0px 0px -5% 0px'
+                });
+
+                sections.forEach(section => sectionObserver.observe(section));
+                items.forEach(item => itemObserver.observe(item));
+
+                const hero = document.querySelector('.hero-section');
+                if (hero) hero.classList.add('is-visible');
+            }
+
+            setTimeout(() => {
+                initAdvancedAnimations();
+                initScrollReveal();
+            }, 150);
 
         })();
     </script>
