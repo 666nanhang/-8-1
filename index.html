@@ -1779,6 +1779,33 @@
 html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(85,190,197,.13),transparent 26rem),linear-gradient(180deg,#f7faf7 0%,var(--bg) 42%,#eef4f2 100%);color:var(--text);font-family:var(--font-sans);overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.42;background-image:linear-gradient(rgba(23,37,43,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(23,37,43,.035) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,#000,transparent 70%);z-index:-1}.container{max-width:1180px;padding:0 34px}
 .navbar{background:rgba(243,246,243,.86);border-bottom:1px solid rgba(47,87,89,.16);box-shadow:0 8px 30px rgba(36,72,72,.05);backdrop-filter:blur(18px);padding:14px 0}.nav-container{min-height:38px}.nav-logo{color:var(--ink);font-family:var(--font-mono);font-size:.82rem;font-weight:700;letter-spacing:.16em}.nav-logo span{color:var(--warm)}.nav-center{gap:6px}.nav-center a{color:#607376;font-size:.88rem;letter-spacing:.04em;border-radius:999px;padding:7px 12px}.nav-center a:hover{color:var(--ink);background:rgba(85,190,197,.12)}.icon-btn{border-color:rgba(47,87,89,.18);color:var(--ink);border-radius:10px}.icon-btn:hover{background:var(--ink);color:#e9f8f6;border-color:var(--ink)}.main-content{margin-top:68px}
 .hero-section{min-height:780px;padding:clamp(76px,10vw,132px) 34px 82px;display:flex;justify-content:center;position:relative;isolation:isolate}.hero-section:after{content:"";position:absolute;right:5%;bottom:34px;width:min(54vw,620px);height:1px;background:linear-gradient(90deg,transparent,var(--primary),transparent);opacity:.55}.hero-top-layout{width:100%;text-align:left}.hero-left-content{max-width:100%;margin:0}.hero-tag{color:#527174;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.2em;margin-bottom:26px}.hero-tag:before{content:"▦  ";color:var(--accent)}.hero-main-row{justify-content:flex-start;align-items:center;gap:30px;margin-bottom:26px}.title-wrap{min-width:0}.hero-name{color:var(--ink);font-family:var(--font-display);font-size:clamp(3.5rem,8vw,7.3rem);font-weight:700;line-height:.95;letter-spacing:-.08em}.hero-dot{color:var(--warm);margin-left:.08em}.hero-slogan{display:grid;gap:3px;width:fit-content;margin:0 0 30px;color:var(--ink);font-family:var(--font-display);font-size:clamp(2.7rem,7vw,6.7rem);line-height:.98;letter-spacing:-.08em}.hero-slogan .motto-solid{font-weight:900}.hero-slogan .motto-outline{font-weight:700;color:transparent;-webkit-text-stroke:1.4px var(--primary);text-stroke:1.4px var(--primary)}.hero-slogan:after{content:"ENERGY IN MOTION";display:block;margin-top:14px;color:var(--warm);font-family:var(--font-mono);font-size:.72rem;font-weight:600;letter-spacing:.26em}.hero-desc-row{display:flex;align-items:flex-end;gap:34px;margin-bottom:42px}.hero-desc-row .hero-desc,.hero-desc{max-width:600px;margin:0;color:#5d7072;font-size:1.02rem;line-height:1.95}.hero-desc b{color:var(--ink);font-weight:700}.hero-discuss-wrap{padding:0;flex:0 0 auto}.hero-discuss-wrap:before{display:none}.discuss-btn{display:inline-flex;align-items:center;gap:12px;border:1px solid #a9c9c8;border-radius:999px;clip-path:none;color:var(--ink);background:rgba(255,255,255,.52);font-size:.88rem;font-weight:700;letter-spacing:.08em;padding:13px 21px 13px 24px}.discuss-btn:after{content:"↗";color:var(--warm);font-size:1.1rem}.discuss-btn:hover{background:var(--ink);color:#eff9f7;border-color:var(--ink);transform:translateY(-2px)}
+/* Hero message CTA — only the first-screen contact entry. */
+.hero-section .discuss-btn{
+    min-height:48px;
+    white-space: nowrap;
+    padding:13px 23px 13px 26px;
+    border-color:rgba(47,118,120,.58);
+    background:linear-gradient(135deg,#e6f8f5 0%,#c8ece8 100%);
+    box-shadow:0 8px 18px rgba(46,117,116,.16),inset 0 1px 0 rgba(255,255,255,.88);
+    letter-spacing:.12em;
+}
+.hero-section .discuss-btn:before{
+    content:"✦";
+    color:var(--warm);
+    font-size:.76rem;
+    line-height:1;
+}
+.hero-section .discuss-btn:hover,
+.hero-section .discuss-btn:focus-visible{
+    background:var(--ink);
+    color:#eff9f7;
+    border-color:var(--ink);
+    box-shadow:0 13px 26px rgba(23,37,43,.22);
+    transform:translateY(-3px);
+    outline:none;
+}
+.hero-section .discuss-btn:focus-visible{outline:3px solid rgba(85,190,197,.34);outline-offset:3px}
+.hero-section .discuss-btn:active{transform:translateY(-1px);box-shadow:0 6px 14px rgba(23,37,43,.18)}
 .hero-right-content{background:transparent;border:0;box-shadow:none;padding:0}.avatar-orbit{position:relative;width:clamp(178px,21vw,268px);aspect-ratio:1;display:grid;place-items:center;isolation:isolate}.avatar-orbit:before,.avatar-orbit:after{content:"";position:absolute;border-radius:50%;pointer-events:none}.avatar-orbit:before{inset:10%;border:1px solid rgba(85,190,197,.7);box-shadow:0 0 0 15px rgba(85,190,197,.05),inset 0 0 0 1px rgba(227,164,95,.28)}.avatar-orbit:after{inset:0;border:1px dashed rgba(85,190,197,.7);transform:rotate(-20deg);animation:orbit-spin 24s linear infinite}.avatar-orbit-ring{position:absolute;border-radius:50%;pointer-events:none}.avatar-orbit-ring.ring-a{inset:4%;border:1px solid rgba(23,37,43,.22);border-left-color:transparent;border-bottom-color:transparent;transform:rotate(32deg)}.avatar-orbit-ring.ring-b{inset:17%;border:1px solid rgba(227,164,95,.7);border-right-color:transparent;transform:rotate(-44deg)}.avatar-orbit-ring.ring-c{inset:0;border:1px dotted rgba(23,37,43,.32);transform:rotate(12deg)}.orbit-tick{position:absolute;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(227,164,95,.14)}.orbit-tick.t1{top:8%;right:26%}.orbit-tick.t2{bottom:19%;left:6%;width:5px;height:5px}.orbit-tick.t3{top:42%;right:-1%;width:4px;height:4px;background:var(--primary)}.hero-avatar{position:relative;z-index:2;width:58%;height:58%;border:7px solid #f9fdfb;box-shadow:0 0 0 1px #a8c8c7,0 16px 30px rgba(27,69,70,.16)}.hero-avatar:hover{transform:scale(1.035)}@keyframes orbit-spin{to{transform:rotate(340deg)}}
 .hero-contact-card{max-width:100%;margin:0;padding:18px 0 0;background:transparent;border:0;border-top:1px solid var(--line);border-radius:0;box-shadow:none;gap:0;justify-content:flex-start}.contact-item{min-width:0;gap:4px;padding:0 28px 0 0;align-items:flex-start}.contact-item+.contact-item{border-left:1px solid var(--line);padding-left:28px}.contact-label{color:#809496;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.12em}.contact-val{color:var(--ink);font-family:var(--font-mono);font-size:.78rem;overflow-wrap:anywhere}
 .section-title{color:var(--ink);font-family:var(--font-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;letter-spacing:-.05em;gap:14px;margin:112px 0 38px}.section-title:before{width:42px;height:2px;background:var(--primary);border-radius:0;box-shadow:none}.section-title:after{content:" / SYSTEM VIEW";color:#89a1a1;font:600 .68rem var(--font-mono);letter-spacing:.08em;align-self:flex-end;margin-bottom:7px}
@@ -1791,6 +1818,14 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}}
 
 .section-heading-row{display:flex;align-items:flex-end;justify-content:space-between;gap:28px}.section-kicker{color:var(--warm);font:600 .68rem var(--font-mono);letter-spacing:.14em;margin-bottom:12px}.section-note{margin:0 0 8px;color:#657b7c;font:600 .7rem/1.7 var(--font-mono);text-align:right;letter-spacing:.06em}.section-note span{color:#91a5a3;font-family:var(--font-sans);font-weight:500}.section-lead{max-width:640px;color:#607577;font-size:.94rem;line-height:1.85;margin:-10px 0 26px}.orbit-caption{display:flex;justify-content:space-between;gap:14px;margin:18px 4px 0;color:#7b8f90;font:600 .61rem var(--font-mono);letter-spacing:.12em}.orbit-caption b{color:var(--warm);font-weight:600}.role-card-symbol{position:absolute;right:28px;top:54px;color:var(--accent);font:400 3.5rem/1 var(--font-display);opacity:.85}.role-card-title span{display:block}.project-card{position:relative;min-height:260px;display:flex;flex-direction:column;justify-content:flex-start}.project-card h3{color:var(--ink);font-family:var(--font-display);font-size:1.5rem;margin:4px 0 12px}.project-stack{color:var(--warm);font:600 .72rem/1.6 var(--font-mono);letter-spacing:.04em;margin-bottom:16px}.project-result{color:#5d7274;font-size:.92rem;line-height:1.85}.project-arrow{position:absolute;right:26px;bottom:22px;color:var(--primary);font-size:1.35rem}.skill-card h3{color:var(--ink);font-family:var(--font-display);font-size:1.45rem;margin:2px 0 0}.skill-row{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:7px}.skill-level{color:#8a9a9a;font:600 .68rem var(--font-mono)}.skill-item{margin-bottom:17px}.skills-grid .card{padding:30px}.skills-grid .skill-name{width:auto;flex:1}.certificate-block .cert-imgs{margin-top:20px}
+/* —— 可游玩项目卡片：整卡可点击 + “点击游玩”按钮 —— */
+.project-card-playable{cursor:pointer}
+.project-card-playable .project-result{margin-bottom:18px}
+.project-play-btn{display:inline-flex;align-items:center;gap:9px;margin-top:auto;padding:10px 20px 10px 13px;border-radius:999px;border:1px solid var(--primary);background:linear-gradient(135deg,#55bec5,#7ed6cd);color:#06323b;font:700 .8rem/1 var(--font-mono);letter-spacing:.14em;text-decoration:none;box-shadow:0 8px 18px rgba(85,190,197,.32);transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.project-play-ico{display:inline-grid;place-items:center;width:21px;height:21px;border-radius:50%;background:#06323b;color:#9ee8e2;font-size:.6rem;padding-left:2px;animation:play-pulse 2.2s ease-in-out infinite}
+.project-play-btn:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(85,190,197,.48);background:linear-gradient(135deg,#4db5bc,#8fe0d8)}
+@keyframes play-pulse{0%,100%{box-shadow:0 0 0 0 rgba(6,50,59,.34)}55%{box-shadow:0 0 0 8px rgba(6,50,59,0)}}
+@media print{.project-play-btn{display:none!important}}
 @media (max-width:768px){.section-heading-row{display:block}.section-note{text-align:left;margin-top:16px}.section-lead{font-size:.88rem}.orbit-caption{font-size:.54rem}.role-card-symbol{right:24px;top:46px;font-size:3rem}.project-card{min-height:230px}}
 
 
@@ -2119,6 +2154,51 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
             padding-top: 32px;
             border-top: 1px solid rgba(85, 190, 197, .35);
         }
+        .certificate-block .cert-imgs {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: clamp(10px, 1.35vw, 18px);
+            margin-top: 24px;
+        }
+        .certificate-block .cert-img-wrap {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 2;
+            padding: 0;
+            overflow: hidden;
+            appearance: none;
+            -webkit-appearance: none;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background: #fff;
+            box-shadow: none;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+        }
+        .certificate-block .cert-img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            object-fit: contain;
+            pointer-events: none;
+            filter: grayscale(1);
+            transition: filter .35s ease, transform .35s ease;
+        }
+        .certificate-block .cert-img-wrap:hover,
+        .certificate-block .cert-img-wrap:active,
+        .certificate-block .cert-img-wrap:focus-visible {
+            border-color: var(--primary);
+            box-shadow: 0 12px 28px rgba(42, 87, 87, .14);
+            transform: translateY(-3px);
+            outline: none;
+        }
+        .certificate-block .cert-img-wrap:hover .cert-img,
+        .certificate-block .cert-img-wrap:active .cert-img,
+        .certificate-block .cert-img-wrap:focus-visible .cert-img {
+            filter: grayscale(0);
+        }
 
         @media (max-width: 899px) {
             .hero-name { font-size: clamp(4.65rem, 12.5vw, 7.5rem); }
@@ -2153,6 +2233,130 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
             .education-main { padding-right: 0; }
             .education-path { padding-left: 24px; gap: 20px; }
             .path-item:before { left: -29px; }
+            .certificate-block .cert-imgs {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+        }
+
+        /* =========================================================
+           移动端最终覆盖：能力路径滚动调优 + 整体排版
+           （追加在主题样式末尾，保证最后生效）
+           ========================================================= */
+
+        .sticky-meta { display: none; } /* 桌面端隐藏进度条 */
+
+        @media (max-width: 768px) {
+            /* overflow-x:hidden 会把 body 变成伪滚动容器，进而破坏后代 sticky。 */
+            html, body { overflow-x: clip; }
+
+            /* —— 能力路径：滚动调优 —— */
+            .sticky-wrapper {
+                height: auto;
+                min-height: 0;
+                /* overflow/clip 会让 position: sticky 在移动端失效，产生整屏空白。 */
+                overflow: visible;
+            }
+            .sticky-content {
+                top: var(--sticky-nav-offset, 68px);
+                height: calc(100svh - var(--sticky-nav-offset, 68px));
+                min-height: 0;
+                overflow: hidden;
+            }
+            .sticky-container {
+                width: 100%;
+                height: 100%;
+                min-height: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-top: 12px;
+                padding-bottom: max(16px, env(safe-area-inset-bottom));
+            }
+            .sticky-container .section-title {
+                padding-top: 0;
+                margin-bottom: 24px;
+                font-size: clamp(2rem, 10vw, 2.65rem);
+            }
+            .role-cards-container {
+                overflow: hidden;
+                touch-action: pan-y;
+                position: relative;
+                mask-image: linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 12px), transparent 100%);
+                -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12px, #000 calc(100% - 12px), transparent 100%);
+            }
+            .role-cards-track { gap: 18px; }
+            .role-card {
+                flex: 0 0 min(76vw, 300px);
+                max-width: 300px;
+                opacity: .62;
+                transform: scale(.955);
+                transform-origin: center;
+                transition: opacity .35s ease, transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+            }
+            .role-card.is-active {
+                opacity: 1;
+                transform: scale(1);
+                border-color: rgba(85, 190, 197, .7);
+                box-shadow: 0 18px 42px rgba(42, 87, 87, .16);
+            }
+            .sticky-meta {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 14px;
+                margin-top: 24px;
+                font-family: var(--font-mono);
+                color: #688081;
+            }
+            .sticky-dots { display: flex; gap: 8px; }
+            .sticky-dot {
+                width: 7px; height: 7px; border-radius: 50%;
+                background: #b9cfce;
+                transition: background .3s ease, transform .3s ease;
+            }
+            .sticky-dot.is-active {
+                background: var(--primary);
+                transform: scale(1.25);
+                box-shadow: 0 0 0 4px rgba(85, 190, 197, .16);
+            }
+            .sticky-counter { font-size: .68rem; letter-spacing: .1em; }
+            .sticky-hint {
+                font-size: .66rem;
+                letter-spacing: .12em;
+                opacity: .9;
+                transition: opacity .5s ease;
+            }
+            .sticky-hint.is-hidden { opacity: 0; }
+
+            /* —— 整体移动端排版：清晰、好看 —— */
+            body { font-size: 16px; }
+            .section-lead { font-size: .9rem; line-height: 1.85; margin: -4px 0 22px; }
+            .card { padding: 22px; }
+            .skills-grid .card { padding: 24px 22px; }
+            .project-card { min-height: 0; padding: 24px 22px; }
+            .card p,
+            .exp-card-desc,
+            .project-result,
+            .skill-intro { font-size: .92rem; line-height: 1.8; }
+            .footer { padding: 30px 20px 46px; font-size: .74rem; letter-spacing: .06em; line-height: 1.9; }
+            .footer .container { padding-left: 0; padding-right: 0; }
+            .modal-container { padding-bottom: calc(28px + env(safe-area-inset-bottom)); }
+        }
+
+        /* 矮屏（如 iPhone SE / 小屏安卓）适当缩小能力路径卡片，避免内容溢出 */
+        @media (max-width: 768px) and (max-height: 700px) {
+            .role-card { flex-basis: min(62vw, 250px); }
+            .sticky-meta { margin-top: 14px; }
+            .sticky-hint { display: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .sticky-wrapper { height: auto !important; }
+            .sticky-content { height: auto !important; position: static !important; }
+            .role-cards-container { overflow: visible; }
+            .role-cards-track { flex-direction: column; gap: 18px; transform: none !important; }
+            .role-card { flex-basis: auto; width: 100%; max-width: none; aspect-ratio: auto; opacity: 1; transform: none !important; }
         }
 
 </style>
@@ -2171,7 +2375,7 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                 education: { school: "河南牧业经济学院", degree: "本科", major: "能源与动力工程", period: "2025.9 - 2029.7", courses: ["工程热力学", "流体力学", "传热学", "PLC应用技术"] },
                 projects: [
                     { name: "AI 辅助系统", stack: "Coze / Prompt / 信息检索", result: "搭建 3 个智能体辅助学业与检索，让信息搜集时间减少 80%。", link: "#" },
-                    { name: "交互式 Web 实验", stack: "JavaScript / Trae / 交互设计", result: "制作飞机大战与手势粒子实验，用代码把抽象逻辑变成可操作的体验。", link: "#" },
+                    { name: "交互式 Web 设计", stack: "原生 JavaScript / Canvas / 交互设计", result: "基于原生 JavaScript 与 Canvas 制作的坦克射击游戏，含多坦克、多模式、可破坏地形与 AI 敌军。", link: "坦克大战.html" },
                     { name: "内容生产工作流", stack: "剪映 / 素材系统 / 标准化", result: "搭建标准化素材库，将视频制作周期从 4h 降至 2.5h，效率提升 37.5%。", link: "#" }
                 ],
                 certificates: [ "人工智能训练师初级证书（阿里云认证）", "人工智能训练师高级证书（阿里云认证）" ],
@@ -2237,7 +2441,7 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                 const slogan = el('h2', 'hero-slogan', `<span class="motto-solid">能源致远</span><span class="motto-outline">动力求索</span>`);
                 const descRow = el('div', 'hero-desc-row', '');
                 const desc = el('p', 'hero-desc', '河南牧业经济学院<b>能源与动力工程</b>专业学生。用工程思维理解能量，用 <b>AI、代码与视觉工具</b>，把复杂系统讲清楚、做出来。');
-                const discussWrap = el('div', 'hero-discuss-wrap', `<a href="javascript:void(0);" class="discuss-btn" onclick="openModal('discussModal')">讨论区</a>`);
+                const discussWrap = el('div', 'hero-discuss-wrap', `<a href="javascript:void(0);" class="discuss-btn" aria-label="给我留言" onclick="openModal('discussModal')">给我留言</a>`);
                 descRow.append(desc, discussWrap);
                 leftContent.append(tag, nameWrap, slogan, descRow);
 
@@ -2287,6 +2491,11 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                 });
                 container.appendChild(track);
                 innerContainer.appendChild(container);
+                innerContainer.appendChild(el('div', 'sticky-meta', `
+                    <div class="sticky-dots" aria-hidden="true"></div>
+                    <span class="sticky-counter">01 / 03</span>
+                    <span class="sticky-hint">向下滑动 · 查看能力路径</span>
+                `));
                 stickyContent.appendChild(innerContainer);
                 wrapper.appendChild(stickyContent);
                 return wrapper;
@@ -2317,7 +2526,13 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                 sec.id = 'projects';
                 sec.innerHTML = `<div class="section-kicker">SELECTED OUTPUT / 03</div><h2 class="section-title">项目成果</h2><p class="section-lead">把专业学习之外的探索，沉淀成可展示、可复用、可继续迭代的作品。</p>`;
                 const grid = el('div', 'grid-3', '');
-                resume.projects.forEach((p, index) => grid.appendChild(el('article', 'card project-card', `<div class="project-index">${String(index + 1).padStart(2, '0')} / OUTPUT</div><h3>${p.name}</h3><p class="project-stack">${p.stack}</p><p class="project-result">${p.result}</p><span class="project-arrow">↗</span>`)));
+                resume.projects.forEach((p, index) => {
+                    const playable = p.link && p.link !== '#';
+                    const body = `<div class="project-index">${String(index + 1).padStart(2, '0')} / OUTPUT</div><h3>${p.name}</h3><p class="project-stack">${p.stack}</p><p class="project-result">${p.result}</p>${playable ? `<a class="project-play-btn" href="${p.link}" aria-label="点击游玩：${p.name}"><span class="project-play-ico">▶</span>点击游玩</a>` : '<span class="project-arrow">↗</span>'}`;
+                    const card = el('article', 'card project-card' + (playable ? ' project-card-playable' : ''), body);
+                    if (playable) card.addEventListener('click', () => { window.location.href = p.link; });
+                    grid.appendChild(card);
+                });
                 sec.appendChild(grid); return sec;
             }
 
@@ -2340,7 +2555,15 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                     <div class="education-main"><div class="education-kicker">CURRENT BASE</div><h3 class="education-school">${resume.education.school}</h3><p class="education-major">${resume.education.major} · ${resume.education.degree} · ${resume.education.period}</p><p class="education-courses"><strong>专业基础：</strong>${resume.education.courses.join(' / ')}</p></div>
                     <div class="education-path"><div class="path-item"><div class="path-year">2025</div><p class="path-text">进入能源与动力工程专业，开始理解能量如何流动。</p></div><div class="path-item"><div class="path-year">2026</div><p class="path-text">将 AI、网页和视觉表达应用到真实内容与系统实践。</p></div><div class="path-item"><div class="path-year">NEXT</div><p class="path-text">面向能源系统的数字化表达与持续实践。</p></div></div>
                 `);
-                const certificateCard = el('div', 'card certificate-block', `<h3 class="certificate-heading">资质与证明</h3><div class="certificate-tags">${resume.certificates.map(c => `<span class="certificate-tag">${c}</span>`).join('')}</div><div class="cert-imgs"><div class="cert-img-wrap"><img data-src="optimized/certificate-1.jpg" class="cert-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" onclick="openLightbox(this.src)" alt="证书1"></div><div class="cert-img-wrap"><img data-src="optimized/certificate-2.jpg" class="cert-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" onclick="openLightbox(this.src)" alt="证书2"></div></div>`);
+                const certificateImages = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 12];
+                const certificateCard = el('div', 'card certificate-block', `
+                    <h3 class="certificate-heading">资质与证明</h3>
+                    <div class="cert-imgs">${certificateImages.map(number => `
+                        <button type="button" class="cert-img-wrap" aria-label="查看证书 ${number}">
+                            <img data-src="证书${number}.jpg" class="cert-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="证书 ${number}">
+                        </button>
+                    `).join('')}</div>
+                `);
                 sec.append(educationCard, certificateCard);
                 return sec;
             }
@@ -2606,37 +2829,124 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                 const stickyContent = document.querySelector('.sticky-content');
                 if (!track || !wrapper || !container || !stickyContent) return;
 
+                const mobileMQ = window.matchMedia('(max-width: 768px)');
+                const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+                const dotsEl = document.querySelector('.sticky-dots');
+                const counterEl = document.querySelector('.sticky-counter');
+                const hintEl = document.querySelector('.sticky-hint');
+                const navbar = document.querySelector('.navbar');
+                const cards = Array.from(track.children);
+
                 let currentX = 0;
                 let targetX = 0;
                 let maxSlide = 0;
+                let stepDistance = 0;
+                let cardCount = cards.length;
                 let scrollableDistance = 1;
+                let stickyTop = 0;
+                let lastIndex = -1;
+                let hinted = false;
+                let measureFrame = 0;
+
+                const isMobile = () => mobileMQ.matches;
+
+                const buildDots = () => {
+                    if (!dotsEl) return;
+                    dotsEl.innerHTML = Array.from({ length: cardCount }, (_, i) =>
+                        `<span class="sticky-dot${i === 0 ? ' is-active' : ''}"></span>`
+                    ).join('');
+                };
+
+                const syncProgress = (index) => {
+                    index = Math.max(0, Math.min(cardCount - 1, Math.round(index)));
+                    if (index === lastIndex) return;
+                    lastIndex = index;
+                    if (dotsEl) {
+                        for (let i = 0; i < dotsEl.children.length; i++) {
+                            dotsEl.children[i].classList.toggle('is-active', i === index);
+                        }
+                    }
+                    cards.forEach((card, cardIndex) => {
+                        const active = cardIndex === index;
+                        card.classList.toggle('is-active', active);
+                        card.setAttribute('aria-current', active ? 'true' : 'false');
+                    });
+                    if (counterEl) counterEl.textContent = `${String(index + 1).padStart(2, '0')} / ${String(cardCount).padStart(2, '0')}`;
+                    if (hintEl && !hinted && index > 0) {
+                        hinted = true;
+                        hintEl.classList.add('is-hidden');
+                    }
+                };
 
                 const measure = () => {
+                    const viewportH = Math.round(window.visualViewport?.height || window.innerHeight || document.documentElement.clientHeight);
+                    stickyTop = isMobile() ? Math.ceil(navbar?.getBoundingClientRect().height || 0) : 0;
+                    wrapper.style.setProperty('--sticky-nav-offset', `${stickyTop}px`);
+
                     maxSlide = Math.max(0, track.scrollWidth - container.clientWidth);
-                    const minimumStoryHeight = window.innerHeight * 1.35;
-                    const neededStoryHeight = window.innerHeight + maxSlide * 1.18;
-                    const storyHeight = Math.max(minimumStoryHeight, neededStoryHeight);
+                    // 三张卡均分实际横向位移，确保首尾卡片都完整落位。
+                    stepDistance = cardCount > 1 ? maxSlide / (cardCount - 1) : maxSlide;
+
+                    // 手机端每切换一张卡，使用一屏可视内容高度作为纵向叙事距离。
+                    const pinnedViewportH = Math.max(1, stickyContent.getBoundingClientRect().height);
+                    const transitionDistance = isMobile()
+                        ? pinnedViewportH * Math.max(0, cardCount - 1)
+                        : maxSlide;
+                    const storyHeight = viewportH + transitionDistance;
                     wrapper.style.height = `${Math.ceil(storyHeight)}px`;
-                    scrollableDistance = Math.max(1, storyHeight - window.innerHeight);
-                    track.style.setProperty('--scroll-x', `${currentX}px`);
+
+                    // sticky 从导航下方开始固定，到容器底部释放；把导航偏移计入完整进度。
+                    scrollableDistance = Math.max(1, transitionDistance + stickyTop);
+                };
+
+                const scheduleMeasure = () => {
+                    cancelAnimationFrame(measureFrame);
+                    measureFrame = requestAnimationFrame(measure);
                 };
 
                 const renderLoop = () => {
                     const rect = wrapper.getBoundingClientRect();
-                    let progress = -rect.top / scrollableDistance;
+                    let progress = (stickyTop - rect.top) / scrollableDistance;
                     progress = Math.max(0, Math.min(1, progress));
-                    targetX = -(maxSlide * progress);
-                    currentX += (targetX - currentX) * 0.12;
-                    if (Math.abs(targetX - currentX) < 0.1) currentX = targetX;
+
+                    // 直接 1:1 跟随滚动进度：滚到板块末尾时，最后一张卡片已完整滑入，
+                    // 不会出现「板块已滚出视野、第三张卡片还没出来」的问题。
+                    targetX = -maxSlide * progress;
+                    currentX = Math.max(-maxSlide, Math.min(0, targetX));
+
                     const x = `${currentX}px`;
                     track.style.setProperty('--scroll-x', x);
                     track.style.transform = `translate3d(${x}, 0, 0)`;
+                    syncProgress(Math.round(-currentX / (stepDistance || maxSlide || 1)));
                     requestAnimationFrame(renderLoop);
                 };
 
+                buildDots();
+                syncProgress(0);
+
+                // 降级：prefers-reduced-motion 时退化为普通纵向布局。
+                if (reduceMotion.matches) {
+                    wrapper.style.height = 'auto';
+                    stickyContent.style.height = 'auto';
+                    stickyContent.style.position = 'static';
+                    track.style.transform = 'none';
+                    track.style.setProperty('--scroll-x', '0px');
+                    return;
+                }
+
                 measure();
-                window.addEventListener('resize', measure, { passive: true });
-                window.addEventListener('load', measure, { once: true });
+
+                // 视口变化（含移动端地址栏收起/展开、旋转）时合并到下一帧重算。
+                window.addEventListener('resize', scheduleMeasure, { passive: true });
+                window.addEventListener('orientationchange', scheduleMeasure, { passive: true });
+                mobileMQ.addEventListener?.('change', scheduleMeasure);
+                if (window.visualViewport) {
+                    window.visualViewport.addEventListener('resize', scheduleMeasure, { passive: true });
+                }
+                window.addEventListener('load', scheduleMeasure, { once: true });
+                // 兜底：等字体/布局稳定后再量一次，避免卡片宽度变化导致终点不对齐。
+                setTimeout(scheduleMeasure, 250);
+
                 requestAnimationFrame(renderLoop);
             };
 
@@ -2663,7 +2973,7 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
             function initScrollReveal() {
                 const sections = Array.from(document.querySelectorAll('.main-content > section:not(.sticky-wrapper)'));
                 const items = Array.from(document.querySelectorAll(
-                    '.hero-contact-card, .role-card, .exp-card-new, #projects .card, #skills .card, .cert-img-wrap'
+                    '.hero-contact-card, .exp-card-new, #projects .card, #skills .card, .cert-img-wrap'
                 ));
 
                 document.body.classList.add('reveal-ready');
