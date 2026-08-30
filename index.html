@@ -2513,7 +2513,7 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                 ];
                 expData.forEach(item => {
                     const card = el('div', 'exp-card-new', `
-                        <div class="exp-card-img-wrap"><img class="img-skeleton" data-src="${item.img}" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" onerror="this.src='${item.img}'; this.classList.remove('img-skeleton')" onclick="openLightbox(this.src)" alt="${item.title}"></div><div class="exp-card-overlay"></div>
+                        <div class="exp-card-img-wrap"><img class="img-skeleton" src="${item.img}" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" onclick="openLightbox(this.src)" alt="${item.title}"></div><div class="exp-card-overlay"></div>
                         <div class="exp-card-content"><div class="exp-card-meta">${item.role} · ${item.date}</div><h3 class="exp-card-title">${item.title}</h3><div class="exp-card-tags">${item.tags.map(t => `<span class="exp-card-tag">${t}</span>`).join('')}</div><p class="exp-card-desc">${item.desc}</p><svg class="exp-card-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
                     `);
                     listContainer.appendChild(card);
@@ -2560,7 +2560,7 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                     <h3 class="certificate-heading">资质与证明</h3>
                     <div class="cert-imgs">${certificateImages.map(number => `
                         <button type="button" class="cert-img-wrap" aria-label="查看证书 ${number}">
-                            <img data-src="证书${number}.jpg" class="cert-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="证书 ${number}">
+                            <img src="optimized/certificate-${number}.jpg" class="cert-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="证书 ${number}">
                         </button>
                     `).join('')}</div>
                 `);
