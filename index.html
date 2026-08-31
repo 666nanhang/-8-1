@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>周帅杭 · 能源致远，动力求索</title>
+    <link rel="preload" as="image" href="optimized/avatar.webp" fetchpriority="high">
     <style>
         /* ===== 极客星空·设计令牌 ===== */
         * {
@@ -2450,7 +2451,7 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                     <div class="avatar-orbit">
                         <span class="avatar-orbit-ring ring-a"></span><span class="avatar-orbit-ring ring-b"></span><span class="avatar-orbit-ring ring-c"></span>
                         <span class="orbit-tick t1"></span><span class="orbit-tick t2"></span><span class="orbit-tick t3"></span>
-                        <img class="hero-avatar img-skeleton" src="86af336cd3ed9a3598b78bfc2b6a09fc.jpg" alt="个人头像" fetchpriority="high" decoding="async" onload="this.classList.remove('img-skeleton')">
+                        <img class="hero-avatar img-skeleton" src="optimized/avatar.webp" alt="个人头像" fetchpriority="high" decoding="async" onload="this.classList.remove('img-skeleton')">
                     </div>
                     <div class="orbit-caption"><span>FIELD NOTE 01</span><b>ENERGY / MOTION</b></div>
                 `;
@@ -2507,9 +2508,9 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                 sec.innerHTML = `<div class="section-kicker">PRACTICE RECORD / FIELD NOTES</div><h2 class="section-title">实践记录</h2><p class="section-lead">从知识整理、视觉表达，到 AI Coding：每一次动手，都是把想法推进一格。</p>`;
                 const listContainer = el('div', 'exp-list', '');
                 const expData = [
-                    { title: '个人知识库搭建', role: '工程知识结构化', date: '2025.09 — 至今', desc: '用 Obsidian 记录课程、实验与问题，把分散的知识整理成可以复用的学习系统。', tags: ['Obsidian', '知识管理', '系统思维'], img: 'optimized/experience-knowledge.jpg' },
-                    { title: '剪辑与内容表达', role: '视觉生产工作流', date: '2025.11 — 至今', desc: '用剪映完成选题、素材整理与剪辑输出，让专业内容更容易被看懂、被记住。', tags: ['剪映', '视觉叙事', '内容运营'], img: 'optimized/experience-editing.jpg' },
-                    { title: 'AI Coding / 健康饮食网站', role: '数字化系统实践', date: '2026.03', desc: '使用 AI Coding 完成从需求拆解到页面落地，把数据、建议与交互组织成可使用的网站。', tags: ['AI Coding', 'Web 开发', '产品思维'], img: 'optimized/experience-health.jpg' }
+                    { title: '个人知识库搭建', role: '工程知识结构化', date: '2025.09 — 至今', desc: '用 Obsidian 记录课程、实验与问题，把分散的知识整理成可以复用的学习系统。', tags: ['Obsidian', '知识管理', '系统思维'], img: 'optimized/experience-knowledge.webp' },
+                    { title: '剪辑与内容表达', role: '视觉生产工作流', date: '2025.11 — 至今', desc: '用剪映完成选题、素材整理与剪辑输出，让专业内容更容易被看懂、被记住。', tags: ['剪映', '视觉叙事', '内容运营'], img: 'optimized/experience-editing.webp' },
+                    { title: 'AI Coding / 健康饮食网站', role: '数字化系统实践', date: '2026.03', desc: '使用 AI Coding 完成从需求拆解到页面落地，把数据、建议与交互组织成可使用的网站。', tags: ['AI Coding', 'Web 开发', '产品思维'], img: 'optimized/experience-health.webp' }
                 ];
                 expData.forEach(item => {
                     const card = el('div', 'exp-card-new', `
@@ -2560,7 +2561,7 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                     <h3 class="certificate-heading">资质与证明</h3>
                     <div class="cert-imgs">${certificateImages.map(number => `
                         <button type="button" class="cert-img-wrap" aria-label="查看证书 ${number}">
-                            <img src="optimized/certificate-${number}.jpg" class="cert-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="证书 ${number}">
+                            <img src="optimized/certificate-${number}.webp" class="cert-img img-skeleton" decoding="async" onload="this.classList.remove('img-skeleton')" alt="证书 ${number}">
                         </button>
                     `).join('')}</div>
                 `);
@@ -2582,9 +2583,9 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                         <p class="ai-modal-subtitle">+ AI PROGRAMMING +</p>
                         <div class="modal-image-list">
                             <!-- 🌟 核心优化 4：弹窗内的图片利用原生懒加载+骨架屏保护，防止没点开弹窗时抢占主页网速 -->
-                            <img data-src="optimized/ai-lobster.jpg" class="modal-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="龙虾" ondblclick="openLightbox(this.src)">
-                            <img data-src="optimized/ai-news.jpg" class="modal-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="资讯" ondblclick="openLightbox(this.src)">
-                            <img data-src="optimized/ai-workbuddy.jpg" class="modal-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="WorkBuddy" ondblclick="openLightbox(this.src)">
+                            <img data-src="optimized/ai-lobster.webp" class="modal-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="龙虾" ondblclick="openLightbox(this.src)">
+                            <img data-src="optimized/ai-news.webp" class="modal-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="资讯" ondblclick="openLightbox(this.src)">
+                            <img data-src="optimized/ai-workbuddy.webp" class="modal-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="WorkBuddy" ondblclick="openLightbox(this.src)">
                         </div>
                     </div>
                 `;
@@ -2601,8 +2602,8 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                         <h1 class="ai-modal-title"><span class="ai-solid">PPT设计者</span><span class="ai-outline">PPT</span></h1>
                         <p class="ai-modal-subtitle">+ PPT DESIGNER +</p>
                         <div class="modal-image-list">
-                            <img data-src="optimized/ppt-1.jpg" class="modal-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="慧瞰农域 PPT" ondblclick="openLightbox(this.src)">
-                            <img data-src="optimized/ppt-2.jpg" class="modal-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="绿水青山 PPT" ondblclick="openLightbox(this.src)">
+                            <img data-src="optimized/ppt-1.webp" class="modal-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="慧瞰农域 PPT" ondblclick="openLightbox(this.src)">
+                            <img data-src="optimized/ppt-2.webp" class="modal-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="绿水青山 PPT" ondblclick="openLightbox(this.src)">
                         </div>
                     </div>
                 `;
@@ -2619,7 +2620,7 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                         <h1 class="ai-modal-title"><span class="ai-solid">自媒体创作者</span><span class="ai-outline">自媒体</span></h1>
                         <p class="ai-modal-subtitle">+ MEDIA CREATOR +</p>
                         <div class="modal-image-list">
-                            <img data-src="optimized/media.jpg" class="modal-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="自媒体展示" ondblclick="openLightbox(this.src)" >
+                            <img data-src="optimized/media.webp" class="modal-img img-skeleton" loading="lazy" decoding="async" onload="this.classList.remove('img-skeleton')" alt="自媒体展示" ondblclick="openLightbox(this.src)" >
                         </div>
                     </div>
                 `;
