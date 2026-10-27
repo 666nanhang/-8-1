@@ -2157,7 +2157,7 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
         }
         .certificate-block .cert-imgs {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: clamp(10px, 1.35vw, 18px);
             margin-top: 24px;
         }
@@ -2556,7 +2556,7 @@ html{background:var(--bg)}body{background:radial-gradient(circle at 82% 8%,rgba(
                     <div class="education-main"><div class="education-kicker">CURRENT BASE</div><h3 class="education-school">${resume.education.school}</h3><p class="education-major">${resume.education.major} · ${resume.education.degree} · ${resume.education.period}</p><p class="education-courses"><strong>专业基础：</strong>${resume.education.courses.join(' / ')}</p></div>
                     <div class="education-path"><div class="path-item"><div class="path-year">2025</div><p class="path-text">进入能源与动力工程专业，开始理解能量如何流动。</p></div><div class="path-item"><div class="path-year">2026</div><p class="path-text">将 AI、网页和视觉表达应用到真实内容与系统实践。</p></div><div class="path-item"><div class="path-year">NEXT</div><p class="path-text">面向能源系统的数字化表达与持续实践。</p></div></div>
                 `);
-                const certificateImages = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 12];
+                const certificateImages = [6, 8, 11, 12];
                 const certificateCard = el('div', 'card certificate-block', `
                     <h3 class="certificate-heading">资质与证明</h3>
                     <div class="cert-imgs">${certificateImages.map(number => `
